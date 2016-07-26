@@ -45,6 +45,77 @@
                 ctxt.lineWidth = 25;
                 ctxt.strokeStyle = '#f00';
                 ctxt.stroke();
+
+                ctxt.beginPath();
+                ctxt.moveTo(10, 380);
+                ctxt.quadraticCurveTo(300, -250, 580, 380);
+                ctxt.lineWidth = 25;
+                ctxt.strokeStyle = '#f00';
+                ctxt.stroke();
+
+                ctxt.beginPath();
+                ctxt.moveTo(125, 20);
+                ctxt.bezierCurveTo(0, 200, 300, 300, 50, 400);
+                ctxt.lineWidth = 5;
+                ctxt.strokeStyle = '#f00';
+                ctxt.stroke();
+
+                ctxt.beginPath();
+                ctxt.arc(300, 200, 75, 1.75 * Math.PI, 1.25 * Math.PI, false);
+                ctxt.lineTo(150, 125);
+                ctxt.quadraticCurveTo(300, 0, 450, 125);
+                ctxt.lineTo(353, 144);
+                ctxt.strokeStyle = "blue";
+                ctxt.lineCap = "round";
+                ctxt.lineWidth = 10;
+                ctxt.stroke();
+
+                //be in center screen
+                ctxt.beginPath();
+                var x, y;
+                x = 150;
+                y = 75;
+                ctxt.fillStyle = "blue";
+                ctxt.fillRect(300 - (x / 2), 200 - (y / 2), x, y);
+                
+               
+                var myg = document.getElementById('myCanvas2');
+                var ctxt = myg.getContext('2d')
+
+                //ctxt.lineWidth = 3;
+                //ctxt.rect(150, 150, 200, 125);
+                //var gradient = ctxt.createLinearGradient(150, 150, 200, 125);
+                //gradient.addColorStop(0, "Black");
+                //gradient.addColorStop(0.5, "Gray");
+                //gradient.addColorStop(1, "White");
+                //ctxt.fillStyle = gradient;
+                //ctxt.fill();
+                //ctxt.stroke();
+
+                
+                //ctxt.lineWidth = 3;
+                //ctxt.rect(150, 150, 250, 175);
+                //var gradient = ctxt.createRadialGradient(200, 200, 5, 250, 250, 100);
+                //gradient.addColorStop(0, "Red");
+                //gradient.addColorStop(.5, "Orange");
+                //gradient.addColorStop(1, "Blue");
+                //ctxt.fillStyle = gradient;
+                //ctxt.fill();
+                //ctxt.stroke();
+
+                
+                
+                ctxt.lineWidth = 3;
+                ctxt.rect(150, 150, 200, 125);
+                var img = new Image();
+                img.src = "th.jpg";
+                img.onload = function () {
+                    var pat = ctxt.createPattern(img, "repeat");
+                    ctxt.fillStyle = pat;
+                    ctxt.fill();
+                    ctxt.stroke();
+                }
+
             }
 
         </script>
@@ -59,5 +130,7 @@
     </head>
     <body>
         <canvas id="myCanvas" width="500" height="600"></canvas>
+        <canvas id="myCanvas2" width="500" height="600"></canvas>
+
     </body>
 </html>
