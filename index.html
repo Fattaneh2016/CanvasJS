@@ -105,15 +105,35 @@
 
                 
                 
-                ctxt.lineWidth = 3;
-                ctxt.rect(150, 150, 200, 125);
+                //ctxt.lineWidth = 3;
+                //ctxt.rect(150, 150, 200, 125);
+                //var img = new Image();
+                //img.src = "th.jpg";
+                //img.onload = function () {
+                //    var pat = ctxt.createPattern(img, "repeat");
+                //    ctxt.fillStyle = pat;
+                //    ctxt.fill();
+                //    ctxt.stroke();
+                //}
+
+                
+                var ctxt = myg.getContext("2d");
                 var img = new Image();
                 img.src = "th.jpg";
                 img.onload = function () {
-                    var pat = ctxt.createPattern(img, "repeat");
-                    ctxt.fillStyle = pat;
-                    ctxt.fill();
+                   // ctxt.drawImage(img, 10, 20);
+                    ctxt.drawImage(img, 0, 0, img.width * 1.5, img.height * 1.5);
+
                     ctxt.stroke();
+                    ctxt.font = "24px arial";
+                    ctxt.strokeStyle = "Red";
+                    ctxt.fillStyle = "Red";
+                    ctxt.textAlign = "center";
+
+                    ctxt.fillText("4. Text with altered colored font", 100, 285);                  
+                    ctxt.strokeText("1. Text with default font", 100, 310);
+
+
                 }
 
             }
